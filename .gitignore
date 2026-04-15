@@ -1,0 +1,23 @@
+# Python
+backend/venv/
+backend/venv311/
+backend/__pycache__/
+backend/**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.env.*
+*.env
+
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# General
+*.log
+*.sqlite3
+*.db
+.DS_Store
+Thumbs.db

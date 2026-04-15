@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /checkout/
+Disallow: /profile/
+Disallow: /orders/
+Disallow: /order-success/
+
+Sitemap: https://ashtrixtees.com/sitemap.xml

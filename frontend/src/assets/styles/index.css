@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-brand-black text-brand-white font-body;
+    cursor: default;
+  }
+
+  ::selection {
+    @apply bg-brand-accent text-brand-black;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-brand-black;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-brand-border rounded-full;
+  }
+
+  input, textarea, select {
+    @apply bg-brand-card border border-brand-border text-brand-white
+           rounded-none outline-none font-body;
+  }
+  
+  select option {
+    background-color: #111111;
+    color: #F5F5F0;
+  }
+  
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #F5F5F0;
+    -webkit-box-shadow: 0 0 0px 1000px #111111 inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  input::placeholder, textarea::placeholder {
+    @apply text-brand-muted;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-accent text-brand-black font-body font-semibold
+           px-6 py-3 tracking-wide uppercase text-sm
+           hover:bg-white transition-colors duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-outline {
+    @apply border border-brand-white text-brand-white font-body font-medium
+           px-6 py-3 tracking-wide uppercase text-sm
+           hover:bg-brand-white hover:text-brand-black transition-colors duration-200;
+  }
+
+  .btn-ghost {
+    @apply text-brand-muted font-body text-sm
+           hover:text-brand-white transition-colors duration-200;
+  }
+
+  .input-field {
+    @apply w-full bg-transparent border-b border-brand-border
+           px-0 py-3 text-brand-white placeholder-brand-muted
+           focus:border-brand-accent transition-colors duration-200 text-sm;
+  }
+
+  .card-product {
+    @apply bg-brand-card border border-brand-border
+           hover:border-brand-accent/40 transition-all duration-300;
+  }
+
+  .section-title {
+    @apply font-display text-5xl md:text-7xl tracking-wider uppercase;
+  }
+
+  .tag {
+    @apply font-mono text-xs text-brand-muted border border-brand-border
+           px-2 py-1 tracking-wider uppercase;
+  }
+
+  .badge-sale {
+    @apply bg-brand-accent text-brand-black font-mono text-xs font-medium
+           px-2 py-0.5 tracking-wider;
+  }
+
+  .page-container {
+    @apply max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.5s ease forwards;
+  }
+
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+}
+
+/* Swiper overrides */
+.swiper-pagination-bullet {
+  background: #6B6B6B !important;
+  opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+  background: #E8FF3A !important;
+  width: 20px !important;
+  border-radius: 4px !important;
+}
